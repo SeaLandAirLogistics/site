@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Sea-Land-Air Logistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6B00',
+                            dark: '#0F172A',
+                            gray: '#F8FAFC',
+                            text: '#334155'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(255, 107, 0, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF6B00;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e65100;
+        }
+
+        .service-card-gradient {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 100%);
+        }
+
+        .icon-pulse {
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .divider-orange {
+            height: 4px;
+            width: 60px;
+            background: #FF6B00;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-text antialiased overflow-x-hidden bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='#'">
+                    <img src="./assets/img/logo/sla_LogoT.png" alt="Sea-Land-Air Logistics" class="h-20 w-auto object-contain">
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-semibold text-gray-600 hover:text-brand-orange transition">Home</a>
+                    <a href="#services" class="text-sm font-semibold text-brand-orange transition">Services</a>
+                    <a href="#sea-freight" class="text-sm font-semibold text-gray-600 hover:text-brand-orange transition">Sea Freight</a>
+                    <a href="#land-freight" class="text-sm font-semibold text-gray-600 hover:text-brand-orange transition">Land Freight</a>
+                    <a href="#air-freight" class="text-sm font-semibold text-gray-600 hover:text-brand-orange transition">Air Freight</a>
+                    <a href="#cont" class="text-sm font-semibold text-gray-600 hover:text-brand-orange transition">Containers</a>
+                    <a href="contact.html" class="px-6 py-2.5 bg-brand-orange text-white text-sm font-bold rounded-full hover:bg-orange-700 transition shadow-lg shadow-orange-500/30">
+                        Get a Quote
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-orange focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Home</a>
+                <a href="#services" class="block px-3 py-3 text-base font-medium text-brand-orange hover:bg-orange-50 rounded-md">Services</a>
+                <a href="#sea-freight" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Sea Freight</a>
+                <a href="#land-freight" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Land Freight</a>
+                <a href="#air-freight" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Air Freight</a>
+                <a href="#cont" class="text-sm font-semibold text-gray-600 hover:text-brand-orange transition">Containers</a>
+                <a href="contact.html" class="block px-3 py-3 mt-4 text-center text-base font-bold text-white bg-brand-orange rounded-full">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-dark">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-orange-500/10 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-block px-4 py-1 bg-orange-500/20 text-brand-orange rounded-full text-sm font-bold mb-6 reveal">
+                What We Offer
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 reveal" style="transition-delay: 100ms;">
+                Our Logistics <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-300">Services</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-gray-400 mb-10 reveal" style="transition-delay: 200ms;">
+                Comprehensive freight solutions tailored to move your cargo across oceans, highways, and skies with unmatched reliability and precision.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 reveal" style="transition-delay: 300ms;">
+                <a href="#sea-freight" class="px-8 py-3 bg-brand-orange text-white rounded-full font-bold hover:bg-orange-700 transition shadow-lg shadow-orange-500/30">
+                    Explore Services
+                </a>
+                <a href="contact.html" class="px-8 py-3 bg-white/10 text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition backdrop-blur-sm">
+                    Request a Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-4xl font-bold text-brand-dark mb-4">Global Freight Solutions</h2>
+                <p class="text-gray-500">From port to port, door to door, and runway to runway — we cover every mile of your supply chain with expertise and care.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-xl transition duration-300 text-center group reveal">
+                    <div class="w-16 h-16 mx-auto bg-orange-100 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Sea Freight</h3>
+                    <p class="text-gray-500 text-sm mb-4">Full container load and less-than-container load shipping across all major global trade lanes.</p>
+                    <a href="#sea-freight" class="text-brand-orange font-bold text-sm hover:underline">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-xl transition duration-300 text-center group reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 mx-auto bg-orange-100 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Land Freight</h3>
+                    <p class="text-gray-500 text-sm mb-4">Reliable road and rail transportation with full visibility across domestic and cross-border networks.</p>
+                    <a href="#land-freight" class="text-brand-orange font-bold text-sm hover:underline">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-xl transition duration-300 text-center group reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 mx-auto bg-orange-100 rounded-2xl flex items-center justify-center text-brand-orange text-2xl mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Air Freight</h3>
+                    <p class="text-gray-500 text-sm mb-4">Express and standard air cargo solutions for time-critical shipments to any destination worldwide.</p>
+                    <a href="#air-freight" class="text-brand-orange font-bold text-sm hover:underline">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sea Freight Section -->
+    <section id="sea-freight" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-brand-orange/10 rounded-full blur-2xl"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sea Freight Shipping" class="w-full h-[500px] object-cover transform group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur px-6 py-4 rounded-2xl shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-brand-orange">
+                                    <i class="fas fa-anchor"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-medium">Global Coverage</p>
+                                    <p class="font-bold text-brand-dark text-sm">500+ Ports Worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="divider-orange"></div>
+                        <span class="text-brand-orange font-bold text-sm uppercase tracking-wider">Ocean Transport</span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-brand-dark mb-6 leading-tight">Sea Freight Solutions</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Sea-Land-Air Logistics operates one of the most comprehensive ocean freight networks in the industry. We move thousands of TEUs annually across every major trade lane, connecting your business to markets in Asia, Europe, the Americas, Africa, and the Middle East.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Whether you need Full Container Load (FCL) for large shipments or Less-than-Container Load (LCL) for smaller cargo, our team ensures competitive rates, reliable sailing schedules, and end-to-end visibility from origin to destination.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">FCL & LCL Shipping</h4>
+                                <p class="text-xs text-gray-500">Flexible container options for any volume.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Reefer Cargo</h4>
+                                <p class="text-xs text-gray-500">Temperature-controlled transport for perishables.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Breakbulk & RORO</h4>
+                                <p class="text-xs text-gray-500">Oversized and vehicle shipping expertise.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Customs Clearance</h4>
+                                <p class="text-xs text-gray-500">Hassle-free documentation and brokerage.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="px-8 py-3 bg-brand-orange text-white rounded-full font-bold hover:bg-orange-700 transition shadow-lg shadow-orange-500/30">
+                        <a href="contact.html">Get Sea Freight Quote</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Land Freight Section -->
+    <section id="land-freight" class="py-24 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="divider-orange"></div>
+                        <span class="text-brand-orange font-bold text-sm uppercase tracking-wider">Ground Transport</span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-brand-dark mb-6 leading-tight">Land Freight Solutions</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our land freight division provides seamless road and rail transportation across continents. With a vetted network of thousands of carriers and our own fleet of modern vehicles, Sea-Land-Air Logistics ensures your cargo moves efficiently from warehouse to final mile.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        We specialize in cross-border trucking, intermodal rail solutions, and dedicated last-mile delivery. Real-time GPS tracking, temperature monitoring, and proof-of-delivery confirmation come standard with every shipment.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">FTL & LTL Transport</h4>
+                                <p class="text-xs text-gray-500">Full and partial truckload options.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Intermodal Rail</h4>
+                                <p class="text-xs text-gray-500">Cost-effective long-haul rail freight.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Cross-Border Haulage</h4>
+                                <p class="text-xs text-gray-500">Seamless customs and transit docs.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Last-Mile Delivery</h4>
+                                <p class="text-xs text-gray-500">Final destination white-glove service.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="px-8 py-3 bg-brand-orange text-white rounded-full font-bold hover:bg-orange-700 transition shadow-lg shadow-orange-500/30">
+                        <a href="contact.html">Get Land Freight Quote</a>
+                    </button>
+                </div>
+
+                <div class="relative order-1 lg:order-2 reveal">
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-orange/10 rounded-full blur-2xl"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Land Freight Trucking" class="w-full h-[500px] object-cover transform group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent"></div>
+                        <div class="absolute bottom-6 right-6 bg-white/95 backdrop-blur px-6 py-4 rounded-2xl shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-brand-orange">
+                                    <i class="fas fa-road"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-medium">Network Size</p>
+                                    <p class="font-bold text-brand-dark text-sm">50,000+ Miles Covered</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Air Freight Section -->
+    <section id="air-freight" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative reveal">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-brand-orange/10 rounded-full blur-2xl"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Air Freight Cargo Plane" class="w-full h-[500px] object-cover transform group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur px-6 py-4 rounded-2xl shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-brand-orange">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-medium">Global Reach</p>
+                                    <p class="font-bold text-brand-dark text-sm">200+ Airports Served</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="divider-orange"></div>
+                        <span class="text-brand-orange font-bold text-sm uppercase tracking-wider">Air Transport</span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-brand-dark mb-6 leading-tight">Air Freight Solutions</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        When time is critical, Sea-Land-Air Logistics delivers with speed. Our air freight division partners with leading airlines and cargo carriers to offer next-flight-out, express, and standard air cargo services to virtually any destination on the globe.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        From urgent medical supplies and high-value electronics to fashion retail and automotive parts, we handle every shipment with priority care. Our air freight experts manage everything from dangerous goods compliance to charter services for oversized cargo.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Express & NFO</h4>
+                                <p class="text-xs text-gray-500">Next-flight-out for urgent cargo.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Charter Services</h4>
+                                <p class="text-xs text-gray-500">Dedicated aircraft for large shipments.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Dangerous Goods</h4>
+                                <p class="text-xs text-gray-500">IATA-certified hazmat handling.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-orange mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-sm">Door-to-Door</h4>
+                                <p class="text-xs text-gray-500">Seamless pickup and delivery included.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="px-8 py-3 bg-brand-orange text-white rounded-full font-bold hover:bg-orange-700 transition shadow-lg shadow-orange-500/30">
+                        <a href="contact.html">Get Air Freight Quote</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Container Sales Section -->
+    <section class="py-24 bg-gray-50" id="cont">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="text-4xl font-bold text-brand-dark">Explore all containers facilities</h2>
+                    <p class="text-gray-500 mt-2">New and used containers available for purchase or lease.</p>
+                </div>
+                <a href="contact.html" class="hidden md:inline-flex items-center gap-2 text-brand-orange font-bold hover:gap-3 transition-all">Explore All <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="bg-white p-4 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 group reveal">
+                    <div class="h-64 rounded-2xl overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1494412574643-35d32468817e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-brand-dark">In Stock</div>
+                    </div>
+                    <div class="flex justify-between items-center px-2">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark">20 Foot Container</h3>
+                            <p class="text-brand-orange font-bold">Contact For Pricing <span class="text-gray-400 text-xs font-normal">/ Purchase</span></p>
+                        </div>
+                        <button class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-white transition"><a href="contact.html"><i class="fas fa-plus"></i></a></button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-white p-4 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 group reveal" style="transition-delay: 100ms;">
+                    <div class="h-64 rounded-2xl overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-brand-dark">Lease Available</div>
+                    </div>
+                    <div class="flex justify-between items-center px-2">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark">40 Foot Container</h3>
+                            <p class="text-brand-orange font-bold">Contact For Pricing <span class="text-gray-400 text-xs font-normal">/ Month</span></p>
+                        </div>
+                        <button class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-white transition"><a href="contact.html"><i class="fas fa-plus"></i></a></button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-white p-4 rounded-3xl shadow-sm hover:shadow-xl transition duration-300 group reveal" style="transition-delay: 200ms;">
+                    <div class="h-64 rounded-2xl overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1605112442948-62fb86e3bd84?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-orange text-white px-3 py-1 rounded-full text-xs font-bold">Sale</div>
+                    </div>
+                    <div class="flex justify-between items-center px-2">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark">Refridgerated Containers</h3>
+                            <p class="text-brand-orange font-bold">Contact For Pricing <span class="text-gray-400 text-xs font-normal">/ Purchase</span></p>
+                        </div>
+                        <button class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-brand-dark hover:bg-brand-orange hover:text-white transition"><a href="contact.html"><i class="fas fa-plus"></i></a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-orange-500/10 to-transparent"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Ship With Confidence?</h2>
+            <p class="text-gray-400 mb-10 max-w-2xl mx-auto">
+                Whether by sea, land, or air — Sea-Land-Air Logistics is your trusted partner for global freight. Get a tailored quote today and experience logistics done right.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="px-8 py-4 bg-brand-orange text-white rounded-full font-bold hover:bg-orange-700 transition shadow-xl shadow-orange-500/30">
+                    <a href="contact.html">Request a Quote</a>
+                </button>
+                <button class="px-8 py-4 bg-white/10 text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition backdrop-blur-sm flex items-center justify-center gap-2">
+                    <a href="contact.html"><i class="fas fa-phone-alt"></i> Call Us Now</a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="./assets/img/logo/sla_LogoT.png" alt="Logo" class="h-12 w-auto brightness-0 invert">
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        The faster, easier way to book and manage your international shipments. Your trusted partner for Sea, Land, and Air logistics.
+                    </p>
+                    <!--
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    -->
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Company</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="index.html#about" class="hover:text-brand-orange transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-orange transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Licenses</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Services</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#sea-freight" class="hover:text-brand-orange transition">Sea Freight</a></li>
+                        <li><a href="#land-freight" class="hover:text-brand-orange transition">Land Freight</a></li>
+                        <li><a href="#air-freight" class="hover:text-brand-orange transition">Air Freight</a></li>
+                        <li><a href="#cont" class="hover:text-brand-orange transition">Container Sales</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Join our newsletter</h4>
+                    <form class="flex flex-col gap-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <input type="email" placeholder="Enter email address" class="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-brand-orange transition">
+                        <button class="bg-brand-orange text-white px-4 py-3 rounded-lg font-bold hover:bg-orange-600 transition"><a href="contact.html">Subscribe</a></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; 2026 Sea-Land-Air Logistics. All rights reserved. Developed by <a href="#" style="color: #FF6B00;">IDM.</a>
+                </p>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            const icon = btn.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                btn.querySelector('i').classList.remove('fa-times');
+                btn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 150;
+
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Navbar background change on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>

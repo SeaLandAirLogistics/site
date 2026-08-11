@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sea-Land-Air Logistics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF6B00',
+                            dark: '#0F172A',
+                            gray: '#F8FAFC',
+                            text: '#334155'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.05)',
+                        'glow': '0 0 20px rgba(255, 107, 0, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF6B00;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e65100;
+        }
+
+        /* Form focus ring custom */
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-text antialiased overflow-x-hidden bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <img src="./assets/img/logo/sla_LogoT.png" alt="Sea-Land-Air Logistics" class="h-20 w-auto object-contain" onerror="this.src='https://placehold.co/200x50/0F172A/FFF?text=SEA-LAND-AIR'">
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#track" class="text-sm font-semibold text-gray-600 hover:text-brand-orange transition">Track Package</a>
+                    <a href="index.html#services" class="text-sm font-semibold text-gray-600 hover:text-brand-orange transition">Services</a>
+                    <a href="index.html#locations" class="text-sm font-semibold text-gray-600 hover:text-brand-orange transition">Locations</a>
+                    <a href="contact.html" class="text-sm font-semibold text-brand-orange transition">Contact</a>
+                    <a href="index.html#quote" class="px-6 py-2.5 bg-brand-orange text-white text-sm font-bold rounded-full hover:bg-orange-700 transition shadow-lg shadow-orange-500/30">
+                        Get a Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-orange focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="index.html#track" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Track Package</a>
+                <a href="index.html#services" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Services</a>
+                <a href="index.html#locations" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-brand-orange hover:bg-orange-50 rounded-md">Locations</a>
+                <a href="contact.html" class="block px-3 py-3 text-base font-medium text-brand-orange bg-orange-50 rounded-md">Contact</a>
+                <a href="index.html#quote" class="block px-3 py-3 mt-4 text-center text-base font-bold text-white bg-brand-orange rounded-full">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header / Hero -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-brand-dark">
+        <!-- Background Texture -->
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-orange-500/10 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center reveal">
+                <div class="inline-block px-4 py-1 bg-orange-500/20 text-brand-orange rounded-full text-sm font-bold mb-4 border border-orange-500/30">Get In Touch</div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
+                    Contact <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-400">Us</span>
+                </h1>
+                <p class="max-w-xl mx-auto text-gray-400 text-lg">
+                    Have a shipment inquiry or need a custom logistics solution? Reach out to our team and we'll get back to you within 24 hours.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 lg:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+                
+                <!-- Contact Info Sidebar -->
+                <div class="lg:col-span-2 space-y-8 reveal">
+                    <div>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-4">Let's Start a Conversation</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                            Whether you need a quote, have questions about tracking, or want to discuss a tailored logistics plan — our team is ready to help.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-brand-orange flex-shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark">Phone</h4>
+                                <p class="text-sm text-gray-500 mt-1">+27 83 753 6996, +27 84 777 0965</p>
+                                <p class="text-sm text-gray-500">Mon - Fri, 8am - 6pm</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-brand-orange flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark">Email</h4>
+                                <p class="text-sm text-gray-500 mt-1">info@sealandaair.com</p>
+                                <p class="text-sm text-gray-500">sales@sealandaair.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-brand-orange flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark">Head Office</h4>
+                                <p class="text-sm text-gray-500 mt-1">10 Maplefield Place, Umgeni Business Park,</p>
+                                <p class="text-sm text-gray-500">Durban, 4091</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div>
+                        <h4 class="font-bold text-brand-dark mb-4">Follow Us</h4>
+                        <div class="flex gap-3">
+                            <a href="index.html" class="w-11 h-11 rounded-full bg-brand-dark text-white flex items-center justify-center hover:bg-brand-orange transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="index.html" class="w-11 h-11 rounded-full bg-brand-dark text-white flex items-center justify-center hover:bg-brand-orange transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="index.html" class="w-11 h-11 rounded-full bg-brand-dark text-white flex items-center justify-center hover:bg-brand-orange transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="index.html" class="w-11 h-11 rounded-full bg-brand-dark text-white flex items-center justify-center hover:bg-brand-orange transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-3 reveal" style="transition-delay: 100ms;">
+                    <div class="bg-white p-8 md:p-10 rounded-3xl shadow-soft border border-gray-100">
+                        <h3 class="text-2xl font-bold text-brand-dark mb-2">Send us a Message</h3>
+                        <p class="text-gray-500 text-sm mb-8">Fill out the form below and we'll respond as soon as possible.</p>
+
+                        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="space-y-5">
+                            <!-- Web3Forms Hidden Fields -->
+                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                            <input type="hidden" name="subject" value="New Contact Form Submission - Sea-Land-Air Logistics">
+                            <input type="hidden" name="from_name" value="Sea-Land-Air Contact Page">
+                            
+                            <!-- Name & Email Row -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="name" class="block text-xs font-bold text-gray-500 uppercase mb-2">Full Name <span class="text-brand-orange">*</span></label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        required 
+                                        placeholder="John Doe"
+                                        class="form-input w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:border-brand-orange focus:bg-white outline-none transition"
+                                    >
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs font-bold text-gray-500 uppercase mb-2">Email Address <span class="text-brand-orange">*</span></label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        required 
+                                        placeholder="john@company.com"
+                                        class="form-input w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:border-brand-orange focus:bg-white outline-none transition"
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Contact Number -->
+                            <div>
+                                <label for="phone" class="block text-xs font-bold text-gray-500 uppercase mb-2">Contact Number <span class="text-brand-orange">*</span></label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    required 
+                                    placeholder="+1 (555) 000-0000"
+                                    class="form-input w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:border-brand-orange focus:bg-white outline-none transition"
+                                >
+                            </div>
+
+                            <!-- Service Type Dropdown -->
+                            <div>
+                                <label for="service_type" class="block text-xs font-bold text-gray-500 uppercase mb-2">Service Type <span class="text-brand-orange">*</span></label>
+                                <div class="relative">
+                                    <select 
+                                        id="service_type" 
+                                        name="service_type" 
+                                        required
+                                        class="form-input w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:border-brand-orange focus:bg-white outline-none transition appearance-none cursor-pointer"
+                                    >
+                                        <option value="" disabled selected>Select a service...</option>
+                                        <option value="Sea Freight">Sea Freight</option>
+                                        <option value="Land Freight">Land Freight</option>
+                                        <option value="Air Freight">Air Freight</option>
+                                        <option value="Container Sales">Container Sales</option>
+                                    </select>
+                                    <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                                        <i class="fas fa-chevron-down text-sm"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message Textarea -->
+                            <div>
+                                <label for="message" class="block text-xs font-bold text-gray-500 uppercase mb-2">Your Message <span class="text-brand-orange">*</span></label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    required 
+                                    rows="5" 
+                                    placeholder="Tell us about your shipment requirements, destination, timeline, or any questions you have..."
+                                    class="form-input w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-400 focus:border-brand-orange focus:bg-white outline-none transition resize-none"
+                                ></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="w-full py-4 bg-brand-orange text-white font-bold rounded-xl hover:bg-orange-600 transition shadow-lg shadow-orange-500/30 flex justify-center items-center gap-2 group">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+
+                            <!-- Result Message -->
+                            <div id="result" class="text-center text-sm mt-2 hidden"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-0 bg-white">
+        <div class="w-full h-80 bg-gray-200 relative overflow-hidden">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6581.532435288106!2d30.99421957533529!3d-29.804626675045228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef707282fce14fd%3A0x5670b7aa82510d87!2s10%20Maplefield%20Pl%2C%20Springfield%2C%20Durban%2C%204001%2C%20South%20Africa!5e1!3m2!1sen!2sus!4v1785932778127!5m2!1sen!2sus" width="1920" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                width="100%" 
+                height="100%" 
+                style="border:0; filter: grayscale(30%) contrast(1.1);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                class="absolute inset-0"
+            ></iframe>
+            <div class="absolute bottom-6 left-6 md:left-16 bg-white p-5 rounded-2xl shadow-xl max-w-xs z-10">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-10 h-10 rounded-full bg-brand-orange flex items-center justify-center text-white">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p class="font-bold text-brand-dark text-sm">Head Office</p>
+                        <p class="text-xs text-gray-500">10 Maplefield Pl, DBN</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                         <img src="./assets/img/logo/sla_LogoT.png" alt="Logo" class="h-12 w-auto brightness-0 invert" onerror="this.src='https://placehold.co/150x40/FFFFFF/0F172A?text=SLA'">
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        The faster, easier way to book and manage your international shipments. Your trusted partner for Sea, Land, and Air logistics.
+                    </p>
+                    <!--
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    -->
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Company</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-brand-orange transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Licenses</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Products</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-brand-orange transition">Container Leasing</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Ocean Freight</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Air Freight</a></li>
+                        <li><a href="#" class="hover:text-brand-orange transition">Warehousing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Join our newsletter</h4>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Enter email address" class="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-brand-orange transition">
+                        <button class="bg-brand-orange text-white px-4 py-3 rounded-lg font-bold hover:bg-orange-600 transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; <script>document.write(new Date().getFullYear())</script> Sea-Land-Air Logistics. All rights reserved. Developed by <a href="https://icarusdigi.github.io/site/" style="color: #FF6B00;" >IDM.</a>
+                </p>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            const icon = btn.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                btn.querySelector('i').classList.remove('fa-times');
+                btn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 150;
+
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Trigger once on load
+        revealOnScroll();
+
+        // Navbar background change on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Web3Forms Handling
+        const form = document.getElementById('contact-form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            
+            result.classList.remove('hidden');
+            result.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending your message...';
+            result.className = 'text-center text-sm mt-3 text-brand-orange';
+
+            fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Message sent successfully! We will be in touch shortly.';
+                        result.className = 'text-center text-sm mt-3 text-green-600 font-bold';
+                        form.reset();
+                    } else {
+                        console.log(response);
+                        result.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i> ' + (json.message || 'Something went wrong. Please try again.');
+                        result.className = 'text-center text-sm mt-3 text-red-500';
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i> Something went wrong! Please check your connection.';
+                    result.className = 'text-center text-sm mt-3 text-red-500';
+                })
+                .then(function() {
+                    setTimeout(() => {
+                        result.classList.add('hidden');
+                        result.innerHTML = '';
+                    }, 8000);
+                });
+        });
+    </script>
+</body>
+</html>

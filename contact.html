@@ -208,7 +208,10 @@
 
                         <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="space-y-5">
                             <!-- Web3Forms Hidden Fields -->
-                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+                            <div class="h-captcha" data-captcha="true" data-lang="en"></div>
+
+                            <input type="hidden" name="access_key" value="b443a51a-b4b0-4773-b3d5-566cf324a0e7">
                             <input type="hidden" name="subject" value="New Contact Form Submission - Sea-Land-Air Logistics">
                             <input type="hidden" name="from_name" value="Sea-Land-Air Contact Page">
                             
@@ -496,5 +499,8 @@
                 });
         });
     </script>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
+
 </body>
 </html>
